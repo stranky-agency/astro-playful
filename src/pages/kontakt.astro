@@ -2,30 +2,33 @@
 import Layout from '../layouts/Layout.astro';
 
 const kontakt = {
-  telefon: '+420 123 456 789',
-  email: 'info@firma.cz',
-  adresa: 'Ulice 1, 110 00 Praha 1',
-  ico: '12345678',
+  telefon: '732 365 945',
+  email: 'info@zubarka-trutnov.cz',
+  adresa: 'Úpské nábřeží 379, 541 01 Trutnov',
+  ico: '65197976',
   pracovniDoba: [
-    { den: 'Pondělí – Pátek', cas: '8:00 – 17:00' },
-    { den: 'Sobota', cas: '9:00 – 12:00' },
-    { den: 'Neděle', cas: 'Odpočíváme 😴' },
+    { den: 'Pondělí', cas: '7:00 – 13:00' },
+    { den: 'Úterý', cas: '9:00 – 17:00' },
+    { den: 'Středa', cas: '8:00 – 14:00' },
+    { den: 'Čtvrtek', cas: '8:00 – 14:00' },
+    { den: 'Pátek', cas: '8:00 – 13:00' },
+    { den: 'Sobota – Neděle', cas: 'Zavřeno 😴' },
   ],
 };
 ---
-<Layout title="Kontakt" description="Napište nám nebo zavolejte — rádi se s vámi potkáme!">
+<Layout title="Kontakt" description="Kontaktujte zubní ordinaci MUDr. Věry Holubcové v Trutnově. Tel: 732 365 945. Úpské nábřeží 379.">
 
   <!-- Header -->
   <section class="bg-cream overflow-hidden relative py-20 px-6">
-    <div class="absolute top-0 right-0 w-80 h-80 bg-primary-400 rounded-full opacity-15 translate-x-1/3 -translate-y-1/3 blur-3xl pointer-events-none"></div>
+    <div class="absolute top-0 right-0 w-80 h-80 bg-primary-200 rounded-full opacity-30 translate-x-1/3 -translate-y-1/3 blur-3xl pointer-events-none"></div>
     <div class="max-w-6xl mx-auto relative">
-      <div class="pill mb-6">✉️ Ozvěte se!</div>
+      <div class="pill mb-6">✉️ Napište nebo zavolejte!</div>
       <h1 class="text-6xl md:text-7xl font-black text-dark leading-none mb-6 max-w-xl">
-        Nebojte se<br/>
-        <span class="text-primary-500">napsat!</span> 😊
+        Objednejte se<br/>
+        <span class="text-primary-500">k nám!</span> 😊
       </h1>
       <p class="text-gray-600 text-xl max-w-lg leading-relaxed">
-        Jsme přátelský tým a na každou zprávu odpovídáme rychle. Ozveme se do 24 hodin — slibujeme!
+        Máte otázku nebo chcete termín? Napište nám! Odpovídáme rychle a rádi.
       </p>
     </div>
   </section>
@@ -46,7 +49,7 @@ const kontakt = {
                 id="jmeno"
                 name="jmeno"
                 required
-                placeholder="Tereza Nováková"
+                placeholder="Jan Novák"
                 class="w-full border-2 border-gray-200 rounded-3xl px-5 py-4 text-sm text-dark placeholder:text-gray-300 font-semibold focus:outline-none focus:border-primary-400 transition"
               />
             </div>
@@ -56,7 +59,7 @@ const kontakt = {
                 type="tel"
                 id="telefon"
                 name="telefon"
-                placeholder="+420 123 456 789"
+                placeholder="732 365 945"
                 class="w-full border-2 border-gray-200 rounded-3xl px-5 py-4 text-sm text-dark placeholder:text-gray-300 font-semibold focus:outline-none focus:border-primary-400 transition"
               />
             </div>
@@ -68,7 +71,7 @@ const kontakt = {
               id="email"
               name="email"
               required
-              placeholder="tereza@email.cz"
+              placeholder="jan@email.cz"
               class="w-full border-2 border-gray-200 rounded-3xl px-5 py-4 text-sm text-dark placeholder:text-gray-300 font-semibold focus:outline-none focus:border-primary-400 transition"
             />
           </div>
@@ -79,15 +82,15 @@ const kontakt = {
               name="zprava"
               required
               rows="5"
-              placeholder="Napište nám, co potřebujete... Nebojte se být konkrétní! 😊"
+              placeholder="Chci se objednat na prohlídku, mám bolest zubu... Nebojte se napsat! 😊"
               class="w-full border-2 border-gray-200 rounded-3xl px-5 py-4 text-sm text-dark placeholder:text-gray-300 font-semibold focus:outline-none focus:border-primary-400 transition resize-none"
             ></textarea>
           </div>
           <button type="submit" id="submit-btn" class="btn-primary w-full text-center py-5 text-base rounded-3xl">
-            Odeslat zprávu 🚀
+            Odeslat zprávu 🦷
           </button>
           <div id="form-status" class="text-sm mt-2 hidden"></div>
-          <p class="text-xs text-gray-400 text-center">* Povinné pole. Odpovídáme do 24 hodin!</p>
+          <p class="text-xs text-gray-400 text-center">* Povinné pole. Odpovídáme co nejdříve!</p>
         </form>
       </div>
 
@@ -118,12 +121,13 @@ const kontakt = {
           <div>
             <div class="text-xs font-black text-gray-400 uppercase tracking-wide">Adresa</div>
             <div class="font-black text-dark text-lg">{kontakt.adresa}</div>
+            <div class="text-xs text-gray-400 font-bold mt-1">V blízkosti parkoviště Lidl</div>
           </div>
         </div>
 
         <!-- Pracovní doba -->
         <div class="bg-gray-50 rounded-4xl p-8 border-2 border-gray-100">
-          <div class="font-black text-dark text-lg mb-4">🕐 Pracovní doba</div>
+          <div class="font-black text-dark text-lg mb-4">🕐 Ordinační hodiny</div>
           <div class="space-y-3">
             {kontakt.pracovniDoba.map(d => (
               <div class="flex justify-between text-sm">
@@ -158,20 +162,20 @@ const kontakt = {
       const json = await res.json();
       if (json.ok) {
         form.reset();
-        status.textContent = '✓ Zpráva odeslána. Ozveme se do 24 hodin.';
+        status.textContent = '✓ Zpráva odeslána. Ozveme se co nejdříve!';
         status.className = 'text-sm mt-2 text-green-600 font-medium';
         btn.textContent = 'Odesláno';
       } else {
         status.textContent = json.error ?? 'Chyba. Zkuste to prosím znovu.';
         status.className = 'text-sm mt-2 text-red-600';
         btn.disabled = false;
-        btn.textContent = 'Odeslat zprávu 🚀';
+        btn.textContent = 'Odeslat zprávu 🦷';
       }
     } catch {
       status.textContent = 'Chyba sítě. Zkuste to prosím znovu.';
       status.className = 'text-sm mt-2 text-red-600';
       btn.disabled = false;
-      btn.textContent = 'Odeslat zprávu 🚀';
+      btn.textContent = 'Odeslat zprávu 🦷';
     }
   });
 </script>

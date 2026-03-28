@@ -5,17 +5,17 @@ export default {
     extend: {
       colors: {
         primary: {
-          50:  '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          500: '#ff6b35',
-          600: '#ea580c',
-          700: '#c2410c',
-          900: '#7c2d12',
+          50:  '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          900: '#1e3a8a',
         },
         accent: '#a8e063',
         lime: '#a8e063',
-        cream: '#fffbf5',
+        cream: '#f0f7ff',
         dark: '#1a1a1a',
       },
       fontFamily: {

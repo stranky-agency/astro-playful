@@ -1,52 +1,52 @@
 ---
 import Layout from '../layouts/Layout.astro';
 const sluzby = [
-  { ikona: '🎨', nazev: 'Služba 1', popis: 'Popis první služby jednou nebo dvěma větami.' },
-  { ikona: '🚀', nazev: 'Služba 2', popis: 'Popis druhé služby jednou nebo dvěma větami.' },
-  { ikona: '💡', nazev: 'Služba 3', popis: 'Popis třetí služby jednou nebo dvěma větami.' },
+  { ikona: '🔍', nazev: 'Prevence', popis: 'Pravidelné prohlídky a čistění — investice do zdravého úsměvu, která se vyplatí.' },
+  { ikona: '🦷', nazev: 'Ošetření', popis: 'Výplně, extrakce a vše co zub potřebuje — bez zbytečného strachu.' },
+  { ikona: '👶', nazev: 'Dětská péče', popis: 'Malé pacienty milujeme. Přátelský přístup, aby zubaře nebraly jako strašáka.' },
 ];
 ---
-<Layout title="Úvod" description="Jsme tady pro vás. S radostí a energií.">
+<Layout title="Úvod" description="Přátelská zubní ordinace pro celou rodinu v Trutnově. MUDr. Věra Holubcová, 17 let praxe, smluvní VZP.">
 
   <!-- Hero -->
   <section class="bg-cream overflow-hidden relative py-20 px-6">
     <!-- Dekorativní blobby -->
     <div class="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full translate-x-1/2 -translate-y-1/2 opacity-30 blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-400 rounded-full -translate-x-1/2 translate-y-1/2 opacity-20 blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-200 rounded-full -translate-x-1/2 translate-y-1/2 opacity-40 blur-3xl"></div>
 
     <div class="max-w-6xl mx-auto relative">
       <div class="max-w-3xl">
-        <div class="pill mb-6">👋 Vítejte!</div>
+        <div class="pill mb-6">👋 Vaše rodinná ordinace v Trutnově</div>
         <h1 class="text-6xl md:text-7xl font-black text-dark leading-none mb-6">
-          Tohle<br/>
-          <span class="text-primary-500">změníme</span><br/>
-          společně!
+          Zubaři,<br/>
+          <span class="text-primary-500">kteří vás</span><br/>
+          nezklámou.
         </h1>
         <p class="text-gray-600 text-xl leading-relaxed mb-10 max-w-lg">
-          Přátelský tým, který odvede skvělou práci. Bez zbytečných komplikací — prostě s radostí!
+          Přátelská péče o zuby pro celou rodinu. Přijďte k nám — slibujeme, že to nebude tak strašné, jak si myslíte.
         </p>
         <div class="flex flex-wrap gap-4">
-          <a href="/kontakt" class="btn-primary text-lg px-10 py-4">Chci začít! 🎉</a>
-          <a href="/sluzby" class="font-extrabold text-dark border-2 border-dark px-8 py-4 rounded-full hover:bg-dark hover:text-cream transition-colors">Co děláme?</a>
+          <a href="/kontakt" class="btn-primary text-lg px-10 py-4">Objednat se 📅</a>
+          <a href="/sluzby" class="font-extrabold text-dark border-2 border-dark px-8 py-4 rounded-full hover:bg-dark hover:text-cream transition-colors">Co léčíme?</a>
         </div>
       </div>
 
       <!-- Floating badges -->
       <div class="mt-16 flex flex-wrap gap-4">
         <div class="bg-white rounded-3xl px-6 py-4 border-2 border-gray-100 flex items-center gap-3 shadow-sm">
-          <span class="text-2xl">⭐</span>
+          <span class="text-2xl">🦷</span>
           <div>
-            <div class="font-black text-dark">4.9/5</div>
-            <div class="text-gray-400 text-xs font-bold">200+ recenzí</div>
+            <div class="font-black text-dark">17 let praxe</div>
+            <div class="text-gray-400 text-xs font-bold">Zkušená ordinace</div>
           </div>
         </div>
         <div class="bg-accent rounded-3xl px-6 py-4 flex items-center gap-3">
-          <span class="text-2xl">⚡</span>
-          <div class="font-black text-dark">Rychlá odezva</div>
+          <span class="text-2xl">✅</span>
+          <div class="font-black text-dark">Smluvní VZP</div>
         </div>
         <div class="bg-primary-500 rounded-3xl px-6 py-4 flex items-center gap-3">
-          <span class="text-2xl text-white">🤝</span>
-          <div class="font-black text-white">Férové ceny</div>
+          <span class="text-2xl text-white">📅</span>
+          <div class="font-black text-white">Otevřeno 5 dní</div>
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@ const sluzby = [
   <!-- Služby -->
   <section class="section">
     <div class="text-center mb-12">
-      <div class="pill mb-4">Co umíme</div>
+      <div class="pill mb-4">Co léčíme</div>
       <h2 class="section-title">Naše služby</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
@@ -77,16 +77,16 @@ const sluzby = [
     <div class="absolute top-0 right-0 w-64 h-64 bg-accent rounded-full translate-x-1/3 -translate-y-1/3 opacity-10"></div>
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative">
       <div>
-        <div class="bg-accent/20 rounded-4xl h-64 flex items-center justify-center text-7xl">🤩</div>
+        <div class="bg-accent/20 rounded-4xl h-64 flex items-center justify-center text-7xl">🦷</div>
       </div>
       <div>
-        <div class="pill mb-4">Proč zrovna my?</div>
-        <h2 class="text-4xl font-black text-white mb-6">Protože nás to baví!</h2>
+        <div class="pill mb-4">Proč k nám?</div>
+        <h2 class="text-4xl font-black text-white mb-6">Jsme tu pro vás a vaši rodinu.</h2>
         <p class="text-gray-400 leading-relaxed mb-6">
-          Nejsme jen firma. Jsme tým lidí, kteří milují svou práci a chtějí, abyste byli opravdu spokojeni. Žádné výmluvy — jen výsledky.
+          Ordinace MUDr. Věry Holubcové v Trutnově pečuje o úsměvy celých rodin už přes 17 let. Věříme, že dobrý zubař je ten, ke kterému se pacienti rádi vrací — ne ten, koho se bojí.
         </p>
         <ul class="space-y-3 mb-8">
-          {['Vždy v termínu, vždy jak jsme slíbili', 'Komunikujeme jasně a lidsky', 'Vaše spokojenost = náš úspěch'].map(b => (
+          {['Přátelský přístup bez zbytečného strachu', 'Moderní technika a digitální rentgen', 'Celá rodina vítána — dospělí i děti'].map(b => (
             <li class="flex items-center gap-3 text-white font-bold">
               <span class="w-6 h-6 bg-accent rounded-full flex-shrink-0 flex items-center justify-center text-dark text-xs font-black">✓</span>
               {b}
@@ -102,9 +102,9 @@ const sluzby = [
   <section class="section text-center relative">
     <div class="bg-accent/20 rounded-5xl p-12 md:p-20">
       <div class="pill mb-6">Nebojte se ozvat</div>
-      <h2 class="text-5xl font-black text-dark mb-4">Začněme spolupracovat!</h2>
-      <p class="text-gray-600 text-lg mb-8">Napište nám a do 24 hodin se ozveme zpět.</p>
-      <a href="/kontakt" class="btn-primary text-lg px-12 py-5">Napsat nám 🚀</a>
+      <h2 class="text-5xl font-black text-dark mb-4">Objednejte se ještě dnes!</h2>
+      <p class="text-gray-600 text-lg mb-8">Zavolejte nebo napište — odpovídáme rychle.</p>
+      <a href="/kontakt" class="btn-primary text-lg px-12 py-5">Kontaktovat ordinaci 🦷</a>
     </div>
   </section>
 

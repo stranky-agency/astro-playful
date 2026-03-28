@@ -1,9 +1,9 @@
 import type { APIRoute } from 'astro';
 
 // Email klienta — PŘEPIŠ pro každý projekt
-const TO_EMAIL = 'info@klient.cz';
+const TO_EMAIL = 'info@zubarka-trutnov.cz';
 // Jméno firmy — pro subject emailu
-const FIRMA = 'Název Firmy';
+const FIRMA = 'Zubní ordinace Trutnov';
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData();
