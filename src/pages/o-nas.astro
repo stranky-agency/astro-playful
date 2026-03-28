@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const tym = [
+  { jmeno: 'Petra Kopecká', role: 'Zakladatelka & šéfka 👑', avatar: '👩‍🦰', barva: 'bg-primary-500', text: 'white', bio: 'Petra firmu rozjela v roce 2015 z lásky k tomu, co dělá. Nejraději ji potkáte na kávě se zákazníky.' },
+  { jmeno: 'Honza Mrázek', role: 'Hlavní specialista 🛠️', avatar: '👨‍💼', barva: 'bg-white', text: 'dark', bio: 'Technický guru týmu. Pokud něco nejde — Honza to vyřeší. Vždy s úsměvem a bez zbytečného fňukání.' },
+  { jmeno: 'Sabina Horáková', role: 'Komunikace & klienti 💬', avatar: '👩‍💻', barva: 'bg-accent', text: 'dark', bio: 'Stará se o to, abyste se vždy cítili v dobrých rukou. Komunikuje rychle, jasně a s energií.' },
+];
+
+const statistiky = [
+  { emoji: '🎉', hodnota: '2015', popis: 'Rok, kdy jsme začali' },
+  { emoji: '🏆', hodnota: '400+', popis: 'Spokojených zákazníků' },
+  { emoji: '⚡', hodnota: '24 h', popis: 'Průměrná odezva' },
+  { emoji: '❤️', hodnota: '98 %', popis: 'Doporučuje nás dál' },
+];
+---
+<Layout title="O nás" description="Jsme tým s velkou energií — poznejte nás blíže!">
+
+  <!-- Hero -->
+  <section class="bg-cream overflow-hidden relative py-20 px-6">
+    <!-- Blob dekorace -->
+    <div class="absolute top-10 right-10 w-80 h-80 bg-primary-400 rounded-full opacity-20 blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-20 w-56 h-56 bg-accent rounded-full opacity-30 blur-2xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto relative">
+      <div class="pill mb-6">👋 Ahoj, tady jsme!</div>
+      <h1 class="text-6xl md:text-7xl font-black text-dark leading-none mb-6 max-w-2xl">
+        Malá firma,<br/>
+        <span class="text-primary-500">velké srdce.</span>
+      </h1>
+      <p class="text-gray-600 text-xl max-w-lg leading-relaxed mb-8">
+        Jsme tým lidí, kteří svou práci milují a chtějí, aby každý zákazník odcházel s úsměvem. Žádná korporace — jen přátelé, kteří to myslí vážně.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="/kontakt" class="btn-primary">Pojďme se poznat! 🤝</a>
+        <a href="/sluzby" class="btn-outline">Co umíme?</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Příběh -->
+  <section class="section">
+    <div class="max-w-6xl mx-auto">
+      <div class="pill mb-6">📖 Náš příběh</div>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl font-black text-dark mb-6">Začínali jsme v garáži 🚗</h2>
+          <p class="text-gray-600 leading-relaxed mb-5 text-lg">
+            Rok 2015. Petra, Honza a jeden notebook. Žádná kancelář, žádný velký rozpočet — jen chuť dělat věci jinak a lépe než ostatní. První zakázka přišla od kamarádky, druhá od její sousedky a od té doby se to celé rozjelo.
+          </p>
+          <p class="text-gray-600 leading-relaxed text-lg">
+            Dnes jsme tříčlenný tým se čtvrtou stovkou spokojených zákazníků. Stále pracujeme s tou samou energií jako v roce 2015 — akorát teď máme pořádnou kancelář a trochu lepší kávovač. 😄
+          </p>
+        </div>
+        <div class="space-y-4">
+          <div class="bg-primary-500/10 rounded-4xl p-8 border-2 border-primary-200">
+            <div class="text-4xl mb-3">🎯</div>
+            <h3 class="font-black text-dark text-xl mb-2">Naše mise</h3>
+            <p class="text-gray-600">Každý zákazník si zaslouží skvělou práci za férovou cenu. Tečka.</p>
+          </div>
+          <div class="bg-accent/20 rounded-4xl p-8 border-2 border-accent/30">
+            <div class="text-4xl mb-3">💪</div>
+            <h3 class="font-black text-dark text-xl mb-2">Náš příslib</h3>
+            <p class="text-gray-600">Vždy v termínu, vždy jak jsme slíbili — nebo vrátíme peníze.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tým -->
+  <section class="bg-dark py-20 px-6 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-accent rounded-full opacity-10 translate-x-1/3 -translate-y-1/3 blur-2xl"></div>
+    <div class="max-w-6xl mx-auto relative">
+      <div class="pill mb-6">🤩 Tým</div>
+      <h2 class="text-4xl font-black text-white mb-10">Lidé za naší prací</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {tym.map(clen => (
+          <div class={`${clen.barva} rounded-4xl p-8 flex flex-col gap-4 border-2 ${clen.barva === 'bg-white' ? 'border-gray-100' : 'border-transparent'}`}>
+            <div class={`w-16 h-16 ${clen.barva === 'bg-primary-500' ? 'bg-white/20' : 'bg-primary-500/10'} rounded-full flex items-center justify-center text-3xl`}>
+              {clen.avatar}
+            </div>
+            <div>
+              <h3 class={`font-black text-xl leading-tight ${clen.text === 'white' ? 'text-white' : 'text-dark'}`}>{clen.jmeno}</h3>
+              <p class={`text-sm font-bold mt-1 ${clen.text === 'white' ? 'text-primary-200' : 'text-primary-500'}`}>{clen.role}</p>
+            </div>
+            <p class={`text-sm leading-relaxed ${clen.text === 'white' ? 'text-primary-100' : 'text-gray-500'}`}>{clen.bio}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistiky -->
+  <section class="section">
+    <div class="max-w-6xl mx-auto">
+      <div class="pill mb-10 mx-auto w-fit">📊 V číslech</div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {statistiky.map(s => (
+          <div class="card text-center py-8">
+            <div class="text-5xl mb-3">{s.emoji}</div>
+            <div class="text-4xl font-black text-dark mb-2">{s.hodnota}</div>
+            <div class="text-gray-400 text-sm font-bold">{s.popis}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="bg-accent/20 rounded-5xl p-12 md:p-20 text-center relative overflow-hidden">
+      <div class="absolute top-4 left-8 text-4xl opacity-30 rotate-12">✨</div>
+      <div class="absolute bottom-4 right-8 text-4xl opacity-30 -rotate-12">🎊</div>
+      <div class="pill mb-6">Rádi se potkáme</div>
+      <h2 class="text-5xl font-black text-dark mb-4">Pojďme spolupracovat!</h2>
+      <p class="text-gray-600 text-lg mb-8 max-w-md mx-auto">Zavolejte, napište nebo přijďte na kávu — vždy uvítáme novou spolupráci s otevřenou náručí.</p>
+      <a href="/kontakt" class="btn-primary text-lg px-12 py-5">Ozvěte se nám 🚀</a>
+    </div>
+  </section>
+
+</Layout>

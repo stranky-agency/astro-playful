@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+const sluzby = [
+  { ikona: '🎨', nazev: 'Služba 1', popis: 'Popis první služby jednou nebo dvěma větami.' },
+  { ikona: '🚀', nazev: 'Služba 2', popis: 'Popis druhé služby jednou nebo dvěma větami.' },
+  { ikona: '💡', nazev: 'Služba 3', popis: 'Popis třetí služby jednou nebo dvěma větami.' },
+];
+---
+<Layout title="Úvod" description="Jsme tady pro vás. S radostí a energií.">
+
+  <!-- Hero -->
+  <section class="bg-cream overflow-hidden relative py-20 px-6">
+    <!-- Dekorativní blobby -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full translate-x-1/2 -translate-y-1/2 opacity-30 blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-400 rounded-full -translate-x-1/2 translate-y-1/2 opacity-20 blur-3xl"></div>
+
+    <div class="max-w-6xl mx-auto relative">
+      <div class="max-w-3xl">
+        <div class="pill mb-6">👋 Vítejte!</div>
+        <h1 class="text-6xl md:text-7xl font-black text-dark leading-none mb-6">
+          Tohle<br/>
+          <span class="text-primary-500">změníme</span><br/>
+          společně!
+        </h1>
+        <p class="text-gray-600 text-xl leading-relaxed mb-10 max-w-lg">
+          Přátelský tým, který odvede skvělou práci. Bez zbytečných komplikací — prostě s radostí!
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/kontakt" class="btn-primary text-lg px-10 py-4">Chci začít! 🎉</a>
+          <a href="/sluzby" class="font-extrabold text-dark border-2 border-dark px-8 py-4 rounded-full hover:bg-dark hover:text-cream transition-colors">Co děláme?</a>
+        </div>
+      </div>
+
+      <!-- Floating badges -->
+      <div class="mt-16 flex flex-wrap gap-4">
+        <div class="bg-white rounded-3xl px-6 py-4 border-2 border-gray-100 flex items-center gap-3 shadow-sm">
+          <span class="text-2xl">⭐</span>
+          <div>
+            <div class="font-black text-dark">4.9/5</div>
+            <div class="text-gray-400 text-xs font-bold">200+ recenzí</div>
+          </div>
+        </div>
+        <div class="bg-accent rounded-3xl px-6 py-4 flex items-center gap-3">
+          <span class="text-2xl">⚡</span>
+          <div class="font-black text-dark">Rychlá odezva</div>
+        </div>
+        <div class="bg-primary-500 rounded-3xl px-6 py-4 flex items-center gap-3">
+          <span class="text-2xl text-white">🤝</span>
+          <div class="font-black text-white">Férové ceny</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Služby -->
+  <section class="section">
+    <div class="text-center mb-12">
+      <div class="pill mb-4">Co umíme</div>
+      <h2 class="section-title">Naše služby</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      {sluzby.map((s, i) => (
+        <div class={`card p-8 ${i === 1 ? 'bg-primary-500 border-primary-400' : ''}`}>
+          <div class="text-5xl mb-4">{s.ikona}</div>
+          <h3 class={`text-xl font-black mb-2 ${i === 1 ? 'text-white' : 'text-dark'}`}>{s.nazev}</h3>
+          <p class={`text-sm leading-relaxed ${i === 1 ? 'text-primary-100' : 'text-gray-500'}`}>{s.popis}</p>
+          <a href="/sluzby" class={`inline-block mt-4 font-extrabold text-sm ${i === 1 ? 'text-white underline' : 'text-primary-500'}`}>
+            Zjistit více →
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- O nás -->
+  <section class="bg-dark py-20 px-6 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-accent rounded-full translate-x-1/3 -translate-y-1/3 opacity-10"></div>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative">
+      <div>
+        <div class="bg-accent/20 rounded-4xl h-64 flex items-center justify-center text-7xl">🤩</div>
+      </div>
+      <div>
+        <div class="pill mb-4">Proč zrovna my?</div>
+        <h2 class="text-4xl font-black text-white mb-6">Protože nás to baví!</h2>
+        <p class="text-gray-400 leading-relaxed mb-6">
+          Nejsme jen firma. Jsme tým lidí, kteří milují svou práci a chtějí, abyste byli opravdu spokojeni. Žádné výmluvy — jen výsledky.
+        </p>
+        <ul class="space-y-3 mb-8">
+          {['Vždy v termínu, vždy jak jsme slíbili', 'Komunikujeme jasně a lidsky', 'Vaše spokojenost = náš úspěch'].map(b => (
+            <li class="flex items-center gap-3 text-white font-bold">
+              <span class="w-6 h-6 bg-accent rounded-full flex-shrink-0 flex items-center justify-center text-dark text-xs font-black">✓</span>
+              {b}
+            </li>
+          ))}
+        </ul>
+        <a href="/o-nas" class="btn-primary">Poznejte nás 👋</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section text-center relative">
+    <div class="bg-accent/20 rounded-5xl p-12 md:p-20">
+      <div class="pill mb-6">Nebojte se ozvat</div>
+      <h2 class="text-5xl font-black text-dark mb-4">Začněme spolupracovat!</h2>
+      <p class="text-gray-600 text-lg mb-8">Napište nám a do 24 hodin se ozveme zpět.</p>
+      <a href="/kontakt" class="btn-primary text-lg px-12 py-5">Napsat nám 🚀</a>
+    </div>
+  </section>
+
+</Layout>

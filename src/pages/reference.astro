@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const reference = [
+  {
+    jmeno: 'Michaela Pokorná',
+    kdo: 'Majitelka kavárny, Brno',
+    hodnoceni: '⭐⭐⭐⭐⭐',
+    text: 'Naprosto skvělá spolupráce! Komunikace byla rychlá, přátelská a výsledek přesně takový, jak jsem si přála. Navíc dokončili vše o 3 dny dříve. Doporučuji všem!',
+    barva: 'border-primary-400',
+    bg: 'bg-white',
+  },
+  {
+    jmeno: 'Tomáš Jelínek',
+    kdo: 'OSVČ — grafický designer',
+    hodnoceni: '⭐⭐⭐⭐⭐',
+    text: 'Hledal jsem někoho spolehlivého a s přátelským přístupem. Dostal jsem obojí! Pracují rychle, komunikují srozumitelně a výsledek mluví sám za sebe. Budu se určitě vracet.',
+    barva: 'border-accent',
+    bg: 'bg-accent/10',
+  },
+  {
+    jmeno: 'Radka Houšková',
+    kdo: 'E-shop s módou, Praha',
+    hodnoceni: '⭐⭐⭐⭐⭐',
+    text: 'S firmou pracujeme opakovaně a pokaždé jsme spokojení. Vždy přijdou s novými nápady, nebojí se říct svůj názor a hlavně — dodají, co slíbí. To je dnes vzácné!',
+    barva: 'border-primary-300',
+    bg: 'bg-primary-50',
+  },
+];
+
+const galerie: string[] = [];
+---
+<Layout title="Reference" description="Co říkají naši zákazníci — čtěte a přesvědčte se sami!">
+
+  <!-- Header -->
+  <section class="bg-cream overflow-hidden relative py-20 px-6">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-primary-400 rounded-full opacity-15 -translate-x-1/2 -translate-y-1/2 blur-3xl pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto relative">
+      <div class="pill mb-6">💬 Zákazníci říkají</div>
+      <h1 class="text-6xl md:text-7xl font-black text-dark leading-none mb-6 max-w-2xl">
+        Nevěříte nám?<br/>
+        <span class="text-primary-500">Věřte jim!</span> 😄
+      </h1>
+      <p class="text-gray-600 text-xl max-w-lg leading-relaxed">
+        Nemusíte nám věřit na slovo — podívejte se, co o nás říkají lidé, kteří s námi pracovali.
+      </p>
+    </div>
+  </section>
+
+  <!-- Statistiky nahoře -->
+  <section class="bg-primary-500 py-10 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-3 gap-6 text-center text-white">
+      <div>
+        <div class="text-4xl font-black">4,9 / 5</div>
+        <div class="text-primary-200 text-sm mt-1 font-bold">Průměrné hodnocení</div>
+      </div>
+      <div>
+        <div class="text-4xl font-black">200+</div>
+        <div class="text-primary-200 text-sm mt-1 font-bold">Recenzí</div>
+      </div>
+      <div>
+        <div class="text-4xl font-black">98 %</div>
+        <div class="text-primary-200 text-sm mt-1 font-bold">Doporučuje nás</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial karty -->
+  <section class="section">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+      {reference.map(r => (
+        <div class={`${r.bg} rounded-4xl p-8 border-2 ${r.barva} flex flex-col gap-5`}>
+          <div class="text-2xl">{r.hodnoceni}</div>
+          <p class="text-gray-700 leading-relaxed flex-1 text-base">
+            „{r.text}"
+          </p>
+          <div class="border-t-2 border-current border-opacity-10 pt-4" style="border-color: inherit; opacity: 0.15; margin-bottom: -0.5rem;"></div>
+          <div>
+            <div class="font-black text-dark text-lg">{r.jmeno}</div>
+            <div class="text-gray-400 text-sm font-bold mt-1">{r.kdo}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Galerie (volitelná) -->
+  {galerie.length > 0 && (
+    <section class="bg-gray-50 py-20 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="pill mb-8">📸 Fotky z realizací</div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {galerie.map(src => (
+            <img src={src} alt="Realizace" class="rounded-4xl object-cover aspect-square w-full" />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="bg-accent/20 rounded-5xl p-12 md:p-20 text-center relative overflow-hidden">
+      <div class="absolute top-6 left-6 text-5xl opacity-20">🌟</div>
+      <div class="absolute bottom-6 right-6 text-5xl opacity-20">🎊</div>
+      <div class="pill mb-6">Chcete být next?</div>
+      <h2 class="text-5xl font-black text-dark mb-4">Přidejte se k nim!</h2>
+      <p class="text-gray-600 text-lg mb-8 max-w-md mx-auto">Napište nám a do 24 hodin se ozveme s konkrétním návrhem, jak vám pomoci.</p>
+      <a href="/kontakt" class="btn-primary text-lg px-12 py-5">Chci spolupracovat! 🎉</a>
+    </div>
+  </section>
+
+</Layout>
